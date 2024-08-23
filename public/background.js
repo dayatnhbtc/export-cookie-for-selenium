@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             value: c.value,
             domain: c.domain,
             path: c.path,
-            expires: c.expirationDate || -1,
+            expiry: c.expirationDate ? Math.floor(c.expirationDate) : undefined,
             httpOnly: c.httpOnly,
             secure: c.secure
           };
